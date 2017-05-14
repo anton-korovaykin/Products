@@ -10,12 +10,9 @@ namespace Products.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public ViewResult Index()
         {
-            var products = new DAL.Products();
-            return products.GetAll().FirstOrDefault().Name;
-
-            //return View();
+            return View();
         }
     }
 }
