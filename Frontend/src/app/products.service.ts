@@ -1,5 +1,5 @@
 import { Injectable }              from '@angular/core';
-import { Http, Response }          from '@angular/http';
+import { Http, Response, RequestMethod }          from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -27,9 +27,12 @@ export class ProductsService {
   }
 
    create(product: Product): Observable<Product> {
-    let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json' }) });
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        let options = new RequestOptions( {method: RequestMethod.Put, headers: headers });
 
-    return this.http.put(this.productUrl, product, options)
+        let body = this.serializeObj(product);
+
+    return this.http.put(this.productUrl, body, options)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
@@ -45,7 +48,7 @@ export class ProductsService {
        delete(id: Number): Observable<Product> {
     let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json' }) });
 
-    return this.http.post(this.productUrl, {id}, options)
+    return this.http.delete(`${this.productUrl}/${id}`, options)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
@@ -71,5 +74,11 @@ export class ProductsService {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+  private serializeObj(obj) {
+    var result = [];
+    for (var property in obj)
+        result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
 
+    return result.join("&");
+}
 }
