@@ -12,7 +12,7 @@ namespace Products.DAL
         public DbSet<Product> Products { get; set; }
     }
 
-    public class ProductsInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ProductsDAL>
+    public class ProductsInitializer : System.Data.Entity.DropCreateDatabaseAlways<ProductsDAL>
     {
         protected override void Seed(ProductsDAL context)
         {

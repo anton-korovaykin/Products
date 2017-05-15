@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Products.Models;
 
 namespace Products.Controllers
 {
+    [EnableCors(origins: "http://localhot:4200", headers: "*", methods: "*")]
     public class ProductController : ApiController
     {
         [HttpGet]

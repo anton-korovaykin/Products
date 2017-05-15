@@ -27,5 +27,16 @@ namespace Products
 
             Database.SetInitializer(new ProductsInitializer());
         }
+
+        protected void Application_BeginRequest()
+        {
+            string[] allowedOrigin = new string[] { "http://localhost:4200" };
+            var origin = HttpContext.Current.Request.Headers["Origin"];
+            if (origin != null && allowedOrigin.Contains(origin))
+            {
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", origin);
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+            }
+        }
     }
 }
