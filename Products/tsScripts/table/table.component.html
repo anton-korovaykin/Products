@@ -1,27 +1,26 @@
 
 <a class="btn btn-success" routerLink="/AddProduct">Add</a>
 <div class="table-responsive">
-	<table class="table table-nonfluid" align="center">
-		<thead>
-		<td><h2>Image</h2></td>
-			<td><h2>Id</h2></td>
-			<td><h2>Name</h2></td>
-			<td><h2>Price</h2></td>
-			<td><h2>Last Update</h2></td>
-			<td></td>
-		</thead>
+    <table class="table table-nonfluid" align="center">
+        <thead>
+            <td><h2>Image</h2></td>
+            <td><h2>Id</h2></td>
+            <td><h2>Name</h2></td>
+            <td><h2>Price</h2></td>
+            <td><h2>Last Update</h2></td>
+            <td></td>
+        </thead>
 
-		<tr *ngFor="let item of products">
-
-		    <td><img src="{{item.Image}}" width="100" height="100"/></td>
-			<td>{{item.Id}}</td>
-			<td>{{item.Name}}</td>
-			<td>{{item.Price}}</td>
-			<td>{{item.LastUpdate | date : format : timezone}}</td>
-			<td>
-				<button class="btn btn-warning">Edit</button>
-				<button class="btn btn-danger">Delete</button>
-			</td>
-		</tr>
-	</table>
+        <tr *ngFor="let item of products">
+            <td><img src="{{item.Image}}" width="100" height="100" /></td>
+            <td>{{item.Id}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.LastUpdate | date : format : timezone}}</td>
+            <td>
+                <button class="btn btn-warning">Edit</button>
+                <a class="btn btn-danger" routerLink="{{'/DeleteProduct/'+item.Id}}" >Delete</a>
+            </td>
+        </tr>
+    </table>
 </div>

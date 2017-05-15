@@ -23,9 +23,7 @@ export class ProductsService {
     }
 
     get(id: number): Observable<Product> {
-        let params = new URLSearchParams();
-        params.set('id', id.toString());
-        return this.http.get(this.productUrl, params)
+        return this.http.get(this.productUrl + "/" + id)
             .map(this.extractData)
             .catch(this.handleError);
     }

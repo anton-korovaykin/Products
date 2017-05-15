@@ -244,6 +244,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Products.DAL.ProductsDAL.mdf" />
+    <Content Include="App_Data\Products.DAL.ProductsDAL_log.ldf">
+      <DependentUpon>Products.DAL.ProductsDAL.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -274,6 +278,8 @@
     <Content Include="tsScripts\add-product\add-product.component.html" />
     <Content Include="tsScripts\app.component.css" />
     <Content Include="tsScripts\app.component.html" />
+    <Content Include="tsScripts\delete-product\delete-product.component.css" />
+    <Content Include="tsScripts\delete-product\delete-product.component.html" />
     <Content Include="tsScripts\table\table.component.css" />
     <Content Include="tsScripts\table\table.component.html" />
     <Content Include="Web.config" />
@@ -294,9 +300,7 @@
     <Content Include="typings\globals\jasmine\typings.json" />
     <Content Include="typings\globals\node\typings.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -308,6 +312,7 @@
     <TypeScriptCompile Include="tsScripts\add-product\add-product.component.ts" />
     <TypeScriptCompile Include="tsScripts\app.component.ts" />
     <TypeScriptCompile Include="tsScripts\app.module.ts" />
+    <TypeScriptCompile Include="tsScripts\delete-product\delete-product.component.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
     <TypeScriptCompile Include="tsScripts\product.ts" />
     <TypeScriptCompile Include="tsScripts\products.service.ts" />

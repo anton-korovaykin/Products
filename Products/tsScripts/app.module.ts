@@ -8,13 +8,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 
-import {ProductsService} from "./products.service";
+import { ProductsService } from "./products.service";
 import { AddProductComponent } from './add-product/add-product.component'
+import { DeleteProductComponent } from './delete-product/delete-product.component'
 
 const appRoutes: Routes = [
     { path: 'ProductsList', component: TableComponent },
     { path: 'AddProduct', component: AddProductComponent },
-    { path: '', redirectTo: '/ProductsList', pathMatch: 'full'},
+    { path: 'DeleteProduct/:id', component: DeleteProductComponent },
+
+    { path: '', redirectTo: '/ProductsList', pathMatch: 'full' },
     { path: '**', component: AppComponent }
 ];
 
@@ -22,7 +25,8 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent,
         TableComponent,
-        AddProductComponent
+        AddProductComponent,
+        DeleteProductComponent
     ],
     imports: [
         RouterModule.forRoot(appRoutes),

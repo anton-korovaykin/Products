@@ -52,6 +52,7 @@ namespace Products.DAL
             var product = context.Products.FirstOrDefault(x => x.Id == id);
             if (product == null) throw new Exception("Product was not found");
             context.Products.Remove(product);
+            context.SaveChanges();
         }
     }
 }
