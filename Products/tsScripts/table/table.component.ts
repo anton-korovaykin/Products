@@ -4,8 +4,8 @@ import {Product} from "../product";
 
 @Component({
   selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css'],
+  templateUrl: './tsScripts/table/table.component.html',
+  styleUrls: ['./tsScripts/table/table.component.css'],
   providers:[ProductsService]
 })
 export class TableComponent implements OnInit {

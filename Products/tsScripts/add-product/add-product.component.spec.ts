@@ -1,3 +1,4 @@
+/// <reference path="../../typings/globals/jasmine/index.d.ts" />
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddProductComponent } from './add-product.component';

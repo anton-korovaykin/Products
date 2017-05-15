@@ -5,8 +5,8 @@ import {Product} from "../product";
 
 @Component({
   	selector: 'app-add-product',
-  	templateUrl: './add-product.component.html',
-  	styleUrls: ['./add-product.component.css'],
+        templateUrl: './tsScripts/add-product/add-product.component.html',
+        styleUrls: ['./tsScripts/add-product/add-product.component.css'],
   	providers:[ProductsService]
 })
 export class AddProductComponent {
@@ -27,7 +27,8 @@ export class AddProductComponent {
    		};
   	}
   	
-  	onSubmit(){
+    onSubmit() {
+            console.log(this.model)
   		this.productsService.create(this.model)
   			.subscribe(
 	        	product => this.router.navigate(['/']),

@@ -10,8 +10,7 @@ namespace Products.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        [Column(TypeName = "image")]
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         public int Price { get; set; }
         public DateTime LastUpdate { get; set; }
     }
