@@ -280,6 +280,8 @@
     <Content Include="tsScripts\app.component.html" />
     <Content Include="tsScripts\delete-product\delete-product.component.css" />
     <Content Include="tsScripts\delete-product\delete-product.component.html" />
+    <Content Include="tsScripts\edit-product\edit-product.component.css" />
+    <Content Include="tsScripts\edit-product\edit-product.component.html" />
     <Content Include="tsScripts\table\table.component.css" />
     <Content Include="tsScripts\table\table.component.html" />
     <Content Include="Web.config" />
@@ -313,6 +315,7 @@
     <TypeScriptCompile Include="tsScripts\app.component.ts" />
     <TypeScriptCompile Include="tsScripts\app.module.ts" />
     <TypeScriptCompile Include="tsScripts\delete-product\delete-product.component.ts" />
+    <TypeScriptCompile Include="tsScripts\edit-product\edit-product.component.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
     <TypeScriptCompile Include="tsScripts\product.ts" />
     <TypeScriptCompile Include="tsScripts\products.service.ts" />

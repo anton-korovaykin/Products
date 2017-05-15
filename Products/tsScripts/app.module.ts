@@ -11,11 +11,13 @@ import { TableComponent } from './table/table.component';
 import { ProductsService } from "./products.service";
 import { AddProductComponent } from './add-product/add-product.component'
 import { DeleteProductComponent } from './delete-product/delete-product.component'
+import { EditProductComponent } from './edit-product/edit-product.component'
 
 const appRoutes: Routes = [
     { path: 'ProductsList', component: TableComponent },
     { path: 'AddProduct', component: AddProductComponent },
     { path: 'DeleteProduct/:id', component: DeleteProductComponent },
+    { path: 'EditProduct/:id', component: EditProductComponent },
 
     { path: '', redirectTo: '/ProductsList', pathMatch: 'full' },
     { path: '**', component: AppComponent }
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
         AppComponent,
         TableComponent,
         AddProductComponent,
-        DeleteProductComponent
+        DeleteProductComponent,
+        EditProductComponent
     ],
     imports: [
         RouterModule.forRoot(appRoutes),

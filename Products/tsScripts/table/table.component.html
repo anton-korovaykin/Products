@@ -18,8 +18,8 @@
             <td>{{item.Price}}</td>
             <td>{{item.LastUpdate | date : format : timezone}}</td>
             <td>
-                <button class="btn btn-warning">Edit</button>
-                <a class="btn btn-danger" routerLink="{{'/DeleteProduct/'+item.Id}}" >Delete</a>
+                <a class="btn btn-warning" routerLink="{{'/EditProduct/' + item.Id}}" >Edit</a>
+                <a class="btn btn-danger" routerLink="{{'/DeleteProduct/' + item.Id}}" >Delete</a>
             </td>
         </tr>
     </table>
